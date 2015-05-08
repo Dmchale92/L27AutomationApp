@@ -114,9 +114,25 @@ var ajaxurl = 'http://www.launch27.com/wp-admin/admin-ajax.php';
 
 <div class="container">
 			<div class="box_content centered_content">
-				<div class="content_container">
-										<h2 style="margin-bottom:50px;">GENERATE A LOCAL SEARCH CAMPAIGN WITH EASE</h2>
-                    <div class="img_box col50" >
+				<div  class="content_container">
+                    <div class="row">
+                        <div style="width:50%;margin:0 auto;" class="col-6-md">
+                            <h2 style="margin-bottom:25px;">GENERATE A LOCAL SEARCH CAMPAIGN WITH EASE</h2>
+                            <h3>THE POWER OF MARKETING WITHOUT THE HEADACHE</h3>
+                            <p style="font-size:20px;">
+                                Simply add your campaign parameters to the form and generate keywords and ads, ready for upload to the Google Adwords Power Editor.
+                                No coding or developers needed.
+                                <br/>
+                                <br/>
+                                You can come back and generate new keywords or ads at any time, faster than ever before!
+                                <br/>
+                                <br/>
+                                Useful Links:
+                                <a href="http://tools.acquisio.com/AdwordsBroadKwConverter/">Broad Match Tool</a> (Highly recommended for adding broad match modifiers to locations and keywords)
+                                </p>
+                        </div>
+                    </div>
+                    <div class="col-6-md" >
                         <form action="/generateCampaign" method='get' class="form-horizontal">
                         <fieldset>
 
@@ -128,7 +144,7 @@ var ajaxurl = 'http://www.launch27.com/wp-admin/admin-ajax.php';
                           <label class="col-md-4 control-label" for="campaignName" data-toggle="collapse" data-target="#campaignExample" aria-expanded="false" aria-controls="collapseExample">Campaign Name (?):</label>
                           <div class="col-md-6">
                           <input id="campaignName" name="campaignName" type="text" placeholder="Sample Maid Company" class="form-control input-md" required="">
-                          <span class="help-block">Enter campaign name</span>
+                          <!--<span class="help-block">Enter campaign name</span>-->
                           </div>
                         </div>
                         <div class="collapse" id="campaignExample">
@@ -141,8 +157,7 @@ var ajaxurl = 'http://www.launch27.com/wp-admin/admin-ajax.php';
                         <div class="form-group">
                           <label class="col-md-4 control-label" for="locations" data-toggle="collapse" data-target="#locationExample" aria-expanded="false" aria-controls="collapseExample">Locations (?):</label>
                           <div class="col-md-4">
-                            <textarea style="width:270px;" class="form-control" id="locations" name="locations">Enter locations here, one per line.
-                            </textarea>
+                            <textarea style="width:270px;" class="form-control" id="locations" name="locations"></textarea>
                           </div>
                         </div>
                         <div class="collapse" id="locationExample">
@@ -156,7 +171,7 @@ var ajaxurl = 'http://www.launch27.com/wp-admin/admin-ajax.php';
                         <div class="form-group">
                           <label class="col-md-4 control-label" for="keywords" data-toggle="collapse" data-target="#keywordExample" aria-expanded="false" aria-controls="collapseExample">Keywords (?):</label>
                           <div class="col-md-4">
-                            <textarea style="width:270px;" class="form-control" id="keywords" name="keywords">Enter keywords here, one per line.</textarea>
+                            <textarea class="form-control" id="keywords" name="keywords"></textarea>
                           </div>
                         </div>
                         <div class="collapse" id="keywordExample">
@@ -170,7 +185,7 @@ var ajaxurl = 'http://www.launch27.com/wp-admin/admin-ajax.php';
                           <label class="col-md-4 control-label" for="headline" data-toggle="collapse" data-target="#adHeadlineExample" aria-expanded="false" aria-controls="collapseExample">Ad Headline (?):</label>
                           <div class="col-md-6">
                           <input id="headline" name="headline" type="text" placeholder="Best Sample Maid Company" class="form-control input-md" required="">
-                          <span class="help-block">Enter ad headline</span>
+                          <!--<span class="help-block">Enter ad headline</span>-->
                           </div>
                         </div>
                         <div class="collapse" id="adHeadlineExample">
@@ -184,7 +199,7 @@ var ajaxurl = 'http://www.launch27.com/wp-admin/admin-ajax.php';
                           <label class="col-md-4 control-label" for="descLineOne" data-toggle="collapse" data-target="#descLineOneExample" aria-expanded="false" aria-controls="collapseExample">Description Line One (?):</label>
                           <div class="col-md-6">
                           <input id="descLineOne" name="descLineOne" type="text" placeholder="Need Fast and Affordable Service?" class="form-control input-md" required="">
-                          <span class="help-block">Enter first description line</span>
+                          <!--<span class="help-block">Enter first description line</span>-->
                           </div>
                         </div>
                         <div class="collapse" id="descLineOneExample">
@@ -198,7 +213,7 @@ var ajaxurl = 'http://www.launch27.com/wp-admin/admin-ajax.php';
                           <label class="col-md-4 control-label" for="descLineTwo" data-toggle="collapse" data-target="#descLineTwoExample" aria-expanded="false" aria-controls="collapseExample">Description Line Two (?):</label>
                           <div class="col-md-6">
                           <input id="descLineTwo" name="descLineTwo" type="text" placeholder="9,748 houses cleaned. Call Now!" class="form-control input-md" required="">
-                          <span class="help-block">Enter second description line</span>
+                          <!--<span class="help-block">Enter second description line</span>-->
                           </div>
                         </div>
                         <div class="collapse" id="descLineTwoExample">
@@ -212,7 +227,7 @@ var ajaxurl = 'http://www.launch27.com/wp-admin/admin-ajax.php';
                           <label class="col-md-4 control-label" for="displayUrl" data-toggle="collapse" data-target="#displayExample" aria-expanded="false" aria-controls="collapseExample">Display URL (?):</label>
                           <div class="col-md-6">
                           <input id="displayUrl" name="displayUrl" type="text" placeholder="SampleMaidCompany.com/Deals" class="form-control input-md" required="">
-                          <span class="help-block">Enter display URL</span>
+                          <!--<span class="help-block">Enter display URL</span>-->
                           </div>
                         </div>
                         <div class="collapse" id="displayExample">
@@ -226,7 +241,7 @@ var ajaxurl = 'http://www.launch27.com/wp-admin/admin-ajax.php';
                           <label class="col-md-4 control-label" for="destUrl" data-toggle="collapse" data-target="#destExample" aria-expanded="false" aria-controls="collapseExample">Destination URL (?):</label>
                           <div class="col-md-6">
                           <input id="destUrl" name="destUrl" type="text" placeholder="https://www.SampleMaidCompany.com" class="form-control input-md" required="">
-                          <span class="help-block">Enter destination URL</span>
+                          <!--<span class="help-block">Enter destination URL</span>-->
                           </div>
                         </div>
                         <div class="collapse" id="destExample">
@@ -245,20 +260,8 @@ var ajaxurl = 'http://www.launch27.com/wp-admin/admin-ajax.php';
 
                         </fieldset>
                         </form>
+                    </div>
 
-                    </div>
-					<div class="text_box col50">
-						<h4>THE POWER OF MARKETING WITHOUT THE HEADACHE</h4>
-						<p style="font-size:20px;">
-                            Simply add your campaign parameters to the form and generate keywords and ads, ready for upload to the Google Adwords Power Editor. No coding or developers needed. <br />
-                            <br />
-                            You can come back and generate new keywords or ads at any time, faster than ever before!
-                            <br/>
-                            <br/>
-                            Useful Links:
-                            Modified Broad Match Tool (Highly recommended for adding broad match modifiers to locations and keywords)
-                            </p>
-                    </div>
 				</div>
 			</div>
 
