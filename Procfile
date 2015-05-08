@@ -1,0 +1,1 @@
+web:gunicorn L27Campaign:app --log-file=-
