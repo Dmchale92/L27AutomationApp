@@ -46,9 +46,8 @@
 <link rel='stylesheet' id='wp-paginate-css'  href='http://www.launch27.com/wp-content/plugins/wp-paginate/wp-paginate.css?ver=1.2.4' type='text/css' media='screen' />
 <!-- This site uses the Yoast Google Analytics plugin v5.0.6 - Universal enabled - https://yoast.com/wordpress/plugins/google-analytics/ -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-        <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
-        <script type="text/javascript">
+<script type="text/javascript">
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -77,6 +76,7 @@ var rlArgs = {"script":"nivo","selector":"lightbox","custom_events":"","activeGa
 <script type='text/javascript' src='http://www.launch27.com/wp-content/themes/verycreative/js/jquery.fancybox-media.js?ver=3.9.5'></script>
 <script type='text/javascript' src='http://www.launch27.com/wp-content/themes/verycreative/js/custom-form-elements.js?ver=3.9.5'></script>
 <script type='text/javascript' src='http://www.launch27.com/wp-content/themes/verycreative/js/jquery.mousewheel-3.0.6.pack.js?ver=3.9.5'></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.launch27.com/xmlrpc.php?rsd" />
 <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.launch27.com/wp-includes/wlwmanifest.xml" /> 
 <meta name="generator" content="WordPress 3.9.5" />
@@ -125,72 +125,113 @@ var ajaxurl = 'http://www.launch27.com/wp-admin/admin-ajax.php';
 
                         <!-- Text input-->
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="campaignName">Campaign Name:</label>
+                          <label class="col-md-4 control-label" for="campaignName" data-toggle="collapse" data-target="#campaignExample" aria-expanded="false" aria-controls="collapseExample">Campaign Name (?):</label>
                           <div class="col-md-6">
                           <input id="campaignName" name="campaignName" type="text" placeholder="Sample Maid Company" class="form-control input-md" required="">
                           <span class="help-block">Enter campaign name</span>
                           </div>
                         </div>
+                        <div class="collapse" id="campaignExample">
+                          <div class="well">
+                            Choose what you'd like to name your campaign.
+                          </div>
+                        </div>
 
                         <!-- Textarea -->
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="locations">Locations:</label>
+                          <label class="col-md-4 control-label" for="locations" data-toggle="collapse" data-target="#locationExample" aria-expanded="false" aria-controls="collapseExample">Locations (?):</label>
                           <div class="col-md-4">
                             <textarea style="width:270px;" class="form-control" id="locations" name="locations">Enter locations here, one per line.
                             </textarea>
                           </div>
                         </div>
+                        <div class="collapse" id="locationExample">
+                          <div class="well">
+                            Input the cities, states, or zip codes you wish to target.
+                          </div>
+                        </div>
+
 
                         <!-- Textarea -->
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="keywords">Keywords:</label>
+                          <label class="col-md-4 control-label" for="keywords" data-toggle="collapse" data-target="#keywordExample" aria-expanded="false" aria-controls="collapseExample">Keywords (?):</label>
                           <div class="col-md-4">
                             <textarea style="width:270px;" class="form-control" id="keywords" name="keywords">Enter keywords here, one per line.</textarea>
+                          </div>
+                        </div>
+                        <div class="collapse" id="keywordExample">
+                          <div class="well">
+                            Input the search terms you'd like to show advertisements for.
                           </div>
                         </div>
 
                         <!-- Text input-->
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="headline">Ad Headline</label>
+                          <label class="col-md-4 control-label" for="headline" data-toggle="collapse" data-target="#adHeadlineExample" aria-expanded="false" aria-controls="collapseExample">Ad Headline (?):</label>
                           <div class="col-md-6">
                           <input id="headline" name="headline" type="text" placeholder="Best Sample Maid Company" class="form-control input-md" required="">
                           <span class="help-block">Enter ad headline</span>
                           </div>
                         </div>
+                        <div class="collapse" id="adHeadlineExample">
+                          <div class="well">
+                            Input the headline for the ad you'd like to show users when they see your ads.
+                          </div>
+                        </div>
 
                         <!-- Text input-->
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="descLineOne">Description Line One</label>
+                          <label class="col-md-4 control-label" for="descLineOne" data-toggle="collapse" data-target="#descLineOneExample" aria-expanded="false" aria-controls="collapseExample">Description Line One (?):</label>
                           <div class="col-md-6">
                           <input id="descLineOne" name="descLineOne" type="text" placeholder="Need Fast and Affordable Service?" class="form-control input-md" required="">
                           <span class="help-block">Enter first description line</span>
                           </div>
                         </div>
+                        <div class="collapse" id="descLineOneExample">
+                          <div class="well">
+                            Input the first description line you'd like to show users when they see your ads.
+                          </div>
+                        </div>
 
                         <!-- Text input-->
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="descLineTwo">Description Line Two</label>
+                          <label class="col-md-4 control-label" for="descLineTwo" data-toggle="collapse" data-target="#descLineTwoExample" aria-expanded="false" aria-controls="collapseExample">Description Line Two (?):</label>
                           <div class="col-md-6">
                           <input id="descLineTwo" name="descLineTwo" type="text" placeholder="9,748 houses cleaned. Call Now!" class="form-control input-md" required="">
                           <span class="help-block">Enter second description line</span>
                           </div>
                         </div>
-
-                        <!-- Text input-->
-                        <div class="form-group">
-                          <label class="col-md-4 control-label" for="displayUrl">Display URL</label>
-                          <div class="col-md-6">
-                          <input id="displayUrl" name="displayUrl" type="text" placeholder="SampleMaidCompany.com/Deals" class="form-control input-md" required="">
-                          <span class="help-block">Enter display URL</span>
+                        <div class="collapse" id="descLineTwoExample">
+                          <div class="well">
+                            Input the second description line you'd like to show users when they see your ads.
                           </div>
                         </div>
 
                         <!-- Text input-->
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="destUrl">Destination URL</label>
+                          <label class="col-md-4 control-label" for="displayUrl" data-toggle="collapse" data-target="#displayExample" aria-expanded="false" aria-controls="collapseExample">Display URL (?):</label>
+                          <div class="col-md-6">
+                          <input id="displayUrl" name="displayUrl" type="text" placeholder="SampleMaidCompany.com/Deals" class="form-control input-md" required="">
+                          <span class="help-block">Enter display URL</span>
+                          </div>
+                        </div>
+                        <div class="collapse" id="displayExample">
+                          <div class="well">
+                            Input the URL you'd like to show users when they see your ads.
+                          </div>
+                        </div>
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="destUrl" data-toggle="collapse" data-target="#destExample" aria-expanded="false" aria-controls="collapseExample">Destination URL (?):</label>
                           <div class="col-md-6">
                           <input id="destUrl" name="destUrl" type="text" placeholder="https://www.SampleMaidCompany.com" class="form-control input-md" required="">
                           <span class="help-block">Enter destination URL</span>
+                          </div>
+                        </div>
+                        <div class="collapse" id="destExample">
+                          <div class="well">
+                            Input the destination you'd like to take users to when they click your ads.
                           </div>
                         </div>
 
@@ -216,34 +257,7 @@ var ajaxurl = 'http://www.launch27.com/wp-admin/admin-ajax.php';
                             <br/>
                             Useful Links:
                             Modified Broad Match Tool (Highly recommended for adding broad match modifiers to locations and keywords)
-                            </p><h3>Explanation of Terms:</h3><p style="font-size:20px;">
-                            Locations:
-                            <br/>
-                            Input the cities, states, or zip codes you wish to target.
-                            <br/>
-                            <br/>
-                            Keywords:
-                            <br/>
-                            Input the search terms you'd like to show advertisements for.
-                            <br/>
-                            <br/>
-                            Ad Headline (35 character limit):
-                            <br/>
-                            Choose a snappy headline to grab your customer's attention.
-                            <br/>
-                            <br/>
-                            Description Line One (35 character limit):
-                            <br/>
-
-                            <br/>
-                            Description Line Two (35 character limit):
-                            <br/>
-                            <br/>
-                            Display URL:
-                            <br/>
-                            <br/>
-                            Destination URL:
-                        </p>
+                            </p>
                     </div>
 				</div>
 			</div>
@@ -365,6 +379,12 @@ var ajaxurl = 'http://www.launch27.com/wp-admin/admin-ajax.php';
 <li id="menu-item-1229" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1229"><a href="#">Help</a></li>
 </ul>		</div>		
 	</footer>
+
+<script type="text/javascript">
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+                            </script>
 	<script type="text/javascript">
 setTimeout(function(){var a=document.createElement("script");
 var b=document.getElementsByTagName('script')[0];

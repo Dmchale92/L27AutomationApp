@@ -44,7 +44,7 @@ def generateCampaign():
         for i in geoKw:
             createKeywordList.append(i + '\n')
 
-        newAdGroups = list(OrderedDict.fromkeys(adGroups))
+        newAdGroups = list(OrderedDict.frsomkeys(adGroups))
 
         createAdList = []
         for adGroup in newAdGroups:
@@ -63,4 +63,4 @@ def generateCampaign():
         return render_template('index.html')
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(debug=True)
