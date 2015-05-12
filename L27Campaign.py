@@ -1,8 +1,10 @@
 __author__ = 'DMcHale'
-import os
+
+import requests
 import itertools
 from collections import OrderedDict
 from flask import Flask, render_template, request
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -14,18 +16,38 @@ def generateCampaign():
     error = None
     if request.method == 'GET':
         campaign = request.args.get('campaignName', '')
-        locations = request.args.get('locations', '')
+        # locations = request.args.get('locations', '')
         keywords = request.args.get('keywords', '')
         headline = request.args.get('headline', '')
         descLineOne = request.args.get('descLineOne', '')
         descLineTwo = request.args.get('descLineTwo', '')
         displayUrl = request.args.get('displayUrl', '')
         destUrl = request.args.get('destUrl', '')
-        locations = locations.split('\n')
+        zipCode = request.args.get('zipCode', '')
+        zipRadius = request.args.get('zipRadius', '')
+        # locations = locations.split('\n')
         keywords = keywords.split('\n')
         criterionType = 'Broad'
         geoKw = []
         adGroups = []
+        zipList = []
+        cityList = []
+
+        apiKey = 'ddVKLJynw5T8wqB3RrSpTipiLlsrCr4QF0BqJaOgfIoM8ZP0rIql0PDLb5dOxhFd'
+
+        r = requests.get('http://www.zipcodeapi.com/rest/' + apiKey + '/radius.json/' + zipCode + '/' + zipRadius + '/mi')
+        responseJSON = r.json()
+
+        for item in responseJSON['zip_codes']:
+            zipList.append(item['zip_code'])
+            cityList.append('+' + item['city'])
+
+        #Sorts and removes duplicates from ZIP and City lists
+        zipList = sorted(dict.fromkeys(zipList).keys())
+        cityList = sorted(dict.fromkeys(cityList).keys())
+
+        locations = cityList
+
         # Turn this into a flash message for results page!
         # if len(headline) > 45:
         #     print("Headline exceeds 35 characters!")
@@ -51,12 +73,15 @@ def generateCampaign():
             createAdList.append(campaign + '\t' + adGroup + '\t' + headline + '\t' + descLineOne + '\t' + descLineTwo + '\t'
                                    + displayUrl + '\t' + destUrl + '\n')
 
-        for location in createKeywordList:
-            print location
-        for keyword in createAdList:
-            print keyword
 
-        return render_template('results.html', campaign = campaign, locations = locations, keywords = keywords,
+        campaignSettings = campaign + '\t' + 'Enabled' + '\t' + '10' + '\t' + 'Search Network Only'
+
+        locationSettings = []
+        for zip in zipList:
+            locationSettings.append(campaign + '\t' + zip + '\t' + 'Postal Code')
+
+        return render_template('results.html', campaignSettings = campaignSettings, locationSettings = locationSettings,
+                               campaign = campaign, locations = locations, keywords = keywords,
                                headline = headline, descLineOne = descLineOne, descLineTwo = descLineTwo,
                                displayUrl = displayUrl, destUrl = destUrl, keywordList = createKeywordList, adList = createAdList)
     else:
