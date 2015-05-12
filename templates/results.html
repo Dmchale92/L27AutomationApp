@@ -117,7 +117,7 @@ var ajaxurl = 'http://www.launch27.com/wp-admin/admin-ajax.php';
 			<div class="box_content centered_content">
 				<div class="content_container">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-6" contenteditable style="height:300px; overflow:scroll; text-align:left;">
                             <h4>
                                 Campaign Output:
                             </h4>
@@ -126,7 +126,7 @@ var ajaxurl = 'http://www.launch27.com/wp-admin/admin-ajax.php';
                             <br/>
                         </div>
 
-                        <div class="col-md-6">
+                        <div class="col-md-6" contenteditable style="height:300px; overflow:scroll; text-align:left;">
                             <h4>
                                 Location Output:
                             </h4>
@@ -143,7 +143,7 @@ var ajaxurl = 'http://www.launch27.com/wp-admin/admin-ajax.php';
                     </div>
                         <div class="col-md-6">
                             <h4>Keywords Output:</h4>
-                            <div id="keytextarea" contenteditable style="height:600px; overflow:scroll; text-align:left;">
+                            <div id="keytextarea" contenteditable style="height:300px; overflow:scroll; text-align:left;">
 
                             {% for keyword in keywordList %}
 
@@ -156,7 +156,7 @@ var ajaxurl = 'http://www.launch27.com/wp-admin/admin-ajax.php';
 
                         <div class="col-md-6">
                             <h4>Ads Output:</h4>
-                            <div id="textarea" contenteditable style="overflow:scroll; text-align:left;">
+                            <div id="textarea" contenteditable style="height:300px; overflow:scroll; text-align:left;">
                             {% for ad in adList %}
 
                                 {{ad}}
