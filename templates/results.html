@@ -78,6 +78,7 @@ var rlArgs = {"script":"nivo","selector":"lightbox","custom_events":"","activeGa
 <script type='text/javascript' src='http://www.launch27.com/wp-content/themes/verycreative/js/jquery.fancybox-media.js?ver=3.9.5'></script>
 <script type='text/javascript' src='http://www.launch27.com/wp-content/themes/verycreative/js/custom-form-elements.js?ver=3.9.5'></script>
 <script type='text/javascript' src='http://www.launch27.com/wp-content/themes/verycreative/js/jquery.mousewheel-3.0.6.pack.js?ver=3.9.5'></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.launch27.com/xmlrpc.php?rsd" />
 <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.launch27.com/wp-includes/wlwmanifest.xml" />
 <meta name="generator" content="WordPress 3.9.5" />
@@ -121,47 +122,65 @@ var ajaxurl = 'http://www.launch27.com/wp-admin/admin-ajax.php';
                             <h4 data-toggle="collapse" data-target="#keywordExample" aria-expanded="false" aria-controls="collapseExample">
                                 Campaign Output:
                             </h4>
-                            <div id="campaigntextarea" contenteditable style="height:300px; overflow:scroll; text-align:left;">
-                            {{campaignSettings}}
-                            </div>
-                            <div class="collapse" id="keywordExample">
+                            <div class="collapse" id="campaignExample">
                                 <div class="well">
                                     These are your campaign settings in the format: Campaign Name / Status / Daily Budget / Networks
                                     Copy these settings into the Add Multiple Campaigns section of the Adwords Editor
                                 </div>
                             </div>
+                            <div id="campaigntextarea" contenteditable style="height:300px; overflow:scroll; text-align:left;">
+                            {{campaignSettings}}
+                            </div>
                         </div>
 
                         <div class="col-md-6">
-                            <h4>
+                            <h4 data-toggle="collapse" data-target="#locationExample" aria-expanded="false" aria-controls="collapseExample">
                                 Location Output:
                             </h4>
+                            <div class="collapse" id="locationExample">
+                                <div class="well">
+                                    These are your location settings in the format: Campaign Name / Location / Type
+                                    Copy these settings into the Add Multiple Locations section of the Adwords Editor under Targeting
+                                </div>
+                            </div>
                             <div id="locationtextarea" contenteditable style="height:300px; overflow:scroll; text-align:left;">
                             {% for location in locationSettings %}
-
                                 {{location}}
                                 <br/>
-
                             {% endfor %}
                             </div>
                         </div>
                     </div>
                         <div class="col-md-6">
-                            <h4>Keywords Output:</h4>
+                            <h4 data-toggle="collapse" data-target="#keywordExample" aria-expanded="false" aria-controls="collapseExample">
+                                Keywords Output:
+                            </h4>
+                            <div class="collapse" id="keywordExample">
+                                <div class="well">
+                                    These are your keyword settings in the format: Campaign Name / Ad Group / Keyword / Max CPC / Match Type
+                                    Copy these settings into the Add Multiple Keywords section of the Adwords Editor
+                                </div>
+                            </div>
                             <div id="keytextarea" contenteditable style="height:300px; overflow:scroll; text-align:left;">
-
                             {% for keyword in keywordList %}
-
                                 {{keyword}}
                                 <br/>
-
                             {% endfor %}
                             </div>
                         </div>
-
                         <div class="col-md-6">
-                            <h4>Ads Output:</h4>
+                            <h4 data-toggle="collapse" data-target="#adExample" aria-expanded="false" aria-controls="collapseExample">
+                                Ads Output:
+                            </h4>
+                            <div class="collapse" id="adExample">
+                                <div class="well">
+                                    These are your advertisements in the format: Campaign Name / Ad Group / Headline / Description Line One / Description Line Two / Display Url / Destination Url
+                                    Copy these settings into the Add Multiple Ads section of the Adwords Editor
+                                </div>
+                            </div>
                             <div id="textarea" contenteditable style="height:300px; overflow:scroll; text-align:left;">
+
+
                             {% for ad in adList %}
 
                                 {{ad}}
