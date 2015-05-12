@@ -124,11 +124,6 @@ var ajaxurl = 'http://www.launch27.com/wp-admin/admin-ajax.php';
                                 No coding or developers needed.
                                 <br/>
                                 <br/>
-                                You can come back and generate new keywords or ads at any time, faster than ever before!
-                                <br/>
-                                <br/>
-                                Useful Links:
-                                <a href="http://tools.acquisio.com/AdwordsBroadKwConverter/">Broad Match Tool</a> (Highly recommended for adding broad match modifiers to locations and keywords)
                                 </p>
                         </div>
                     </div>
@@ -155,19 +150,27 @@ var ajaxurl = 'http://www.launch27.com/wp-admin/admin-ajax.php';
 
                         <!-- Text input-->
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="zipCode">Zip Code</label>
+                          <label class="col-md-4 control-label" for="zipCode" data-toggle="collapse" data-target="#zipExample" aria-expanded="false" aria-controls="collapseExample">Zip Code</label>
                           <div class="col-md-5">
                           <input id="zipCode" name="zipCode" type="text" placeholder="Enter ZIP Code" class="form-control input-md" required="">
-
+                          </div>
+                        </div>
+                        <div class="collapse" id="zipExample">
+                          <div class="well">
+                            Input the zip code for your business.
                           </div>
                         </div>
 
                         <!-- Text input-->
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="zipRadius">Campaign Radius</label>
+                          <label class="col-md-4 control-label" for="zipRadius" data-toggle="collapse" data-target="#radiusExample" aria-expanded="false" aria-controls="collapseExample">Campaign Radius</label>
                           <div class="col-md-5">
                           <input id="zipRadius" name="zipRadius" type="text" placeholder="Enter Radius" class="form-control input-md" required="">
-
+                          </div>
+                        </div>
+                        <div class="collapse" id="radiusExample">
+                          <div class="well">
+                            Input the distance (in miles) from your business that you're able to service customers.
                           </div>
                         </div>
 
@@ -194,6 +197,19 @@ var ajaxurl = 'http://www.launch27.com/wp-admin/admin-ajax.php';
                         <div class="collapse" id="keywordExample">
                           <div class="well">
                             Input the search terms you'd like to show advertisements for.
+                          </div>
+                        </div>
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="maxCPC" data-toggle="collapse" data-target="#cpcExample" aria-expanded="false" aria-controls="collapseExample">Max CPC</label>
+                          <div class="col-md-5">
+                          <input id="maxCPC" name="maxCPC" type="text" placeholder="Enter maximum bid" class="form-control input-md" required="">
+                          </div>
+                        </div>
+                        <div class="collapse" id="cpcExample">
+                          <div class="well">
+                            Input the maximum amount (USD) you're willing to pay for a click to your website.
                           </div>
                         </div>
 

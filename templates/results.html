@@ -118,11 +118,17 @@ var ajaxurl = 'http://www.launch27.com/wp-admin/admin-ajax.php';
 				<div class="content_container">
                     <div class="row">
                         <div class="col-md-6">
-                            <h4>
+                            <h4 data-toggle="collapse" data-target="#keywordExample" aria-expanded="false" aria-controls="collapseExample">
                                 Campaign Output:
                             </h4>
                             <div id="campaigntextarea" contenteditable style="height:300px; overflow:scroll; text-align:left;">
                             {{campaignSettings}}
+                            </div>
+                            <div class="collapse" id="keywordExample">
+                                <div class="well">
+                                    These are your campaign settings in the format: Campaign Name / Status / Daily Budget / Networks
+                                    Copy these settings into the Add Multiple Campaigns section of the Adwords Editor
+                                </div>
                             </div>
                         </div>
 

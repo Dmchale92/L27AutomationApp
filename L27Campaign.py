@@ -18,6 +18,7 @@ def generateCampaign():
         campaign = request.args.get('campaignName', '')
         # locations = request.args.get('locations', '')
         keywords = request.args.get('keywords', '')
+        maxCpc = request.args.get('maxCPC', '')
         headline = request.args.get('headline', '')
         descLineOne = request.args.get('descLineOne', '')
         descLineTwo = request.args.get('descLineTwo', '')
@@ -59,7 +60,7 @@ def generateCampaign():
         for item in itertools.product(keywords, locations):
             adGroup = item[0].strip().replace('+', '').capitalize()
             keyWord = item[0].strip() + ' ' + item[1].strip()
-            geoKw.append(campaign + '\t' + adGroup + '\t' + keyWord + '\t' + criterionType)
+            geoKw.append(campaign + '\t' + adGroup + '\t' + keyWord + '\t' + maxCpc + '\t' + criterionType)
             adGroups.append(adGroup)
 
         createKeywordList = []
