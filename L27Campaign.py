@@ -13,10 +13,26 @@ def hello(name=None):
 
 @app.route('/generateCampaign', methods=['GET', 'POST'])
 def generateCampaign():
+    '''
+    This needs to be turned into a class and split into different methods
+    for the generation of each subgroup of information.
+
+    class generateCampaign():
+
+        def __init__(self):
+        self.campaign =
+
+        def generateCampaignSettings(campaign):
+
+        def generateLocationSettings(campaign, zipList):
+
+        def generateKeywordList(campaign, keywords, locations):
+
+        def generateAdsList():
+    '''
     error = None
     if request.method == 'GET':
         campaign = request.args.get('campaignName', '')
-        # locations = request.args.get('locations', '')
         keywords = request.args.get('keywords', '')
         maxCpc = request.args.get('maxCPC', '')
         headline = request.args.get('headline', '')
@@ -26,7 +42,6 @@ def generateCampaign():
         destUrl = request.args.get('destUrl', '')
         zipCode = request.args.get('zipCode', '')
         zipRadius = request.args.get('zipRadius', '')
-        # locations = locations.split('\n')
         keywords = keywords.split('\n')
         criterionType = 'Broad'
         geoKw = []
@@ -36,14 +51,21 @@ def generateCampaign():
 
         apiKey = 'ddVKLJynw5T8wqB3RrSpTipiLlsrCr4QF0BqJaOgfIoM8ZP0rIql0PDLb5dOxhFd'
 
-        r = requests.get('http://www.zipcodeapi.com/rest/' + apiKey + '/radius.json/' + zipCode + '/' + zipRadius + '/mi')
+        r = requests.get('http://www.zipcodeapi.com/rest/' +
+                         apiKey +
+                         '/radius.json/' +
+                         zipCode +
+                         '/' +
+                         zipRadius +
+                         '/mi')
+
         responseJSON = r.json()
 
         for item in responseJSON['zip_codes']:
             zipList.append(item['zip_code'])
             cityList.append('+' + item['city'])
 
-        #Sorts and removes duplicates from ZIP and City lists
+        #Sorts and removes duplicates from Zip and City lists
         zipList = sorted(dict.fromkeys(zipList).keys())
         cityList = sorted(dict.fromkeys(cityList).keys())
 
@@ -60,31 +82,70 @@ def generateCampaign():
         for item in itertools.product(keywords, locations):
             adGroup = item[0].strip().replace('+', '').capitalize()
             keyWord = item[0].strip() + ' ' + item[1].strip()
-            geoKw.append(campaign + '\t' + adGroup + '\t' + keyWord + '\t' + maxCpc + '\t' + criterionType)
+            geoKw.append(campaign +
+                         '\t' +
+                         adGroup +
+                         '\t' +
+                         keyWord +
+                         '\t' +
+                         maxCpc +
+                         '\t' +
+                         criterionType)
             adGroups.append(adGroup)
 
         createKeywordList = []
         for i in geoKw:
-            createKeywordList.append(i + '\n')
+            createKeywordList.append(i +
+                                     '\n')
 
         newAdGroups = list(OrderedDict.fromkeys(adGroups))
 
         createAdList = []
         for adGroup in newAdGroups:
-            createAdList.append(campaign + '\t' + adGroup + '\t' + headline + '\t' + descLineOne + '\t' + descLineTwo + '\t'
-                                   + displayUrl + '\t' + destUrl + '\n')
+            createAdList.append(campaign +
+                                '\t' +
+                                adGroup +
+                                '\t' +
+                                headline +
+                                '\t' +
+                                descLineOne +
+                                '\t' +
+                                descLineTwo +
+                                '\t' +
+                                displayUrl +
+                                '\t' +
+                                destUrl +
+                                '\n')
 
-
-        campaignSettings = campaign + '\t' + 'Enabled' + '\t' + '10' + '\t' + 'Search Network Only'
+        campaignSettings = campaign + \
+                           '\t' + \
+                           'Enabled' + \
+                           '\t' + \
+                           '10' + \
+                           '\t' + \
+                           'Search Network Only'
 
         locationSettings = []
         for zip in zipList:
-            locationSettings.append(campaign + '\t' + zip + '\t' + 'Postal Code')
+            locationSettings.append(campaign +
+                                    '\t' +
+                                    zip +
+                                    '\t' +
+                                    'Postal Code')
 
-        return render_template('results.html', campaignSettings = campaignSettings, locationSettings = locationSettings,
-                               campaign = campaign, locations = locations, keywords = keywords,
-                               headline = headline, descLineOne = descLineOne, descLineTwo = descLineTwo,
-                               displayUrl = displayUrl, destUrl = destUrl, keywordList = createKeywordList, adList = createAdList)
+        return render_template('results.html',
+                               campaignSettings = campaignSettings,
+                               locationSettings = locationSettings,
+                               campaign = campaign,
+                               locations = locations,
+                               keywords = keywords,
+                               headline = headline,
+                               descLineOne = descLineOne,
+                               descLineTwo = descLineTwo,
+                               displayUrl = displayUrl,
+                               destUrl = destUrl,
+                               keywordList = createKeywordList,
+                               adList = createAdList)
     else:
         return render_template('index.html')
 
