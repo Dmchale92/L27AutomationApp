@@ -134,18 +134,18 @@ def generateCampaign():
                                     'Postal Code')
 
         return render_template('results.html',
-                               campaignSettings = campaignSettings,
-                               locationSettings = locationSettings,
-                               campaign = campaign,
-                               locations = locations,
-                               keywords = keywords,
-                               headline = headline,
-                               descLineOne = descLineOne,
-                               descLineTwo = descLineTwo,
-                               displayUrl = displayUrl,
-                               destUrl = destUrl,
-                               keywordList = createKeywordList,
-                               adList = createAdList)
+                               campaignSettings=campaignSettings,
+                               locationSettings=locationSettings,
+                               campaign=campaign,
+                               locations=locations,
+                               keywords=keywords,
+                               headline=headline,
+                               descLineOne=descLineOne,
+                               descLineTwo=descLineTwo,
+                               displayUrl=displayUrl,
+                               destUrl=destUrl,
+                               keywordList=createKeywordList,
+                               adList=createAdList)
     else:
         return render_template('index.html')
 
