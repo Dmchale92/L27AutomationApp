@@ -1,9 +1,10 @@
+<!DOCTYPE html>
 <html>
     <head>
 			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 			<meta name="generator" content="WordPress 3.9.5" />
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
-			
+
 			<link rel="alternate" type="application/rss+xml" title="Launch27 RSS Feed" href="http://www.launch27.com/feed/" />
 			<link rel="alternate" type="application/rss+xml" title="Launch27 Comments RSS Feed" href="http://launch27.disqus.com/latest.rss"  />
 			<link rel="pingback" href="http://www.launch27.com/xmlrpc.php" />
@@ -46,8 +47,9 @@
 <link rel='stylesheet' id='wp-paginate-css'  href='http://www.launch27.com/wp-content/plugins/wp-paginate/wp-paginate.css?ver=1.2.4' type='text/css' media='screen' />
 <!-- This site uses the Yoast Google Analytics plugin v5.0.6 - Universal enabled - https://yoast.com/wordpress/plugins/google-analytics/ -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
-<script type="text/javascript">
+        <script type="text/javascript">
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -78,7 +80,7 @@ var rlArgs = {"script":"nivo","selector":"lightbox","custom_events":"","activeGa
 <script type='text/javascript' src='http://www.launch27.com/wp-content/themes/verycreative/js/jquery.mousewheel-3.0.6.pack.js?ver=3.9.5'></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.launch27.com/xmlrpc.php?rsd" />
-<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.launch27.com/wp-includes/wlwmanifest.xml" /> 
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.launch27.com/wp-includes/wlwmanifest.xml" />
 <meta name="generator" content="WordPress 3.9.5" />
 <link rel='shortlink' href='http://www.launch27.com/?p=1133' />
 <script type="text/javascript">
@@ -114,189 +116,91 @@ var ajaxurl = 'http://www.launch27.com/wp-admin/admin-ajax.php';
 
 <div class="container">
 			<div class="box_content centered_content">
-				<div  class="content_container">
+				<div class="content_container">
                     <div class="row">
-                        <div style="width:50%;margin:0 auto;" class="col-6-md">
-                            <h2 style="margin-bottom:25px;">GENERATE A LOCAL SEARCH CAMPAIGN WITH EASE</h2>
-                            <h3>THE POWER OF MARKETING WITHOUT THE HEADACHE</h3>
-                            <p style="font-size:20px;">
-                                Simply add your campaign parameters to the form and generate keywords and ads, ready for upload to the Google Adwords Power Editor.
-                                No coding or developers needed.
+                        <div class="col-md-6">
+                            <h4 data-toggle="collapse" data-target="#campaignExample" aria-expanded="false" aria-controls="collapseExample">
+                                Campaign Output (?):
+                            </h4>
+                            <div class="collapse" id="campaignExample">
+                                <div class="well">
+                                    Upload this first.
+                                    These are your campaign settings in the format: Campaign Name / Status / Daily Budget / Networks
+                                    Copy these settings into the Add Multiple Campaigns section of the Adwords Editor
+                                </div>
+                            </div>
+                            <div id="campaigntextarea" contenteditable style="height:300px; overflow:scroll; text-align:left;">
+                            {{campaignSettings}}
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <h4 data-toggle="collapse" data-target="#locationExample" aria-expanded="false" aria-controls="collapseExample">
+                                Location Output (?):
+                            </h4>
+                            <div class="collapse" id="locationExample">
+                                <div class="well">
+                                    Upload this second.
+                                    These are your location settings in the format: Campaign Name / Location / Type
+                                    Copy these settings into the Add Multiple Locations section of the Adwords Editor under Targeting
+                                </div>
+                            </div>
+                            <div id="locationtextarea" contenteditable style="height:300px; overflow:scroll; text-align:left;">
+                            {% for location in locationSettings %}
+                                {{location}}
                                 <br/>
-                                <br/>
-                                </p>
+                            {% endfor %}
+                            </div>
                         </div>
                     </div>
-                    <div class="col-6-md" >
-                        <form action="/generateCampaign" method='get' class="form-horizontal">
-                        <fieldset>
+                        <div class="col-md-6">
+                            <h4 data-toggle="collapse" data-target="#keywordExample" aria-expanded="false" aria-controls="collapseExample">
+                                Keywords Output (?):
+                            </h4>
+                            <div class="collapse" id="keywordExample">
+                                <div class="well">
+                                    Upload this third.
+                                    These are your keyword settings in the format: Campaign Name / Ad Group / Keyword / Max CPC / Match Type
+                                    Copy these settings into the Add Multiple Keywords section of the Adwords Editor
+                                </div>
+                            </div>
+                            <div id="keytextarea" contenteditable style="height:300px; overflow:scroll; text-align:left;">
+                            {% for keyword in keywordList %}
+                                {{keyword}}
+                                <br/>
+                            {% endfor %}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h4 data-toggle="collapse" data-target="#adExample" aria-expanded="false" aria-controls="collapseExample">
+                                Ads Output (?):
+                            </h4>
+                            <div class="collapse" id="adExample">
+                                <div class="well">
+                                    Upload this last.
+                                    These are your advertisements in the format: Campaign Name / Ad Group / Headline / Description Line One / Description Line Two / Display Url / Destination Url
+                                    Copy these settings into the Add Multiple Ads section of the Adwords Editor
+                                </div>
+                            </div>
+                            <div id="textarea" contenteditable style="height:300px; overflow:scroll; text-align:left;">
 
-                        <!-- Form Name -->
-                        <legend>Adwords Campaign Generator</legend>
 
-                        <!-- Text input-->
-                        <div class="form-group">
-                          <label class="col-md-4 control-label" for="campaignName" data-toggle="collapse" data-target="#campaignExample" aria-expanded="false" aria-controls="collapseExample">Campaign Name (?):</label>
-                          <div class="col-md-6">
-                          <input id="campaignName" name="campaignName" type="text" placeholder="Sample Maid Company" class="form-control input-md" required="">
-                          <!--<span class="help-block">Enter campaign name</span>-->
-                          </div>
-                        </div>
-                        <div class="collapse" id="campaignExample">
-                          <div class="well">
-                            Choose what you'd like to name your campaign.
-                          </div>
-                        </div>
+                            {% for ad in adList %}
 
-                        <!-- Text input-->
-                        <div class="form-group">
-                          <label class="col-md-4 control-label" for="zipCode" data-toggle="collapse" data-target="#zipExample" aria-expanded="false" aria-controls="collapseExample">Zip Code (?):</label>
-                          <div class="col-md-5">
-                          <input id="zipCode" name="zipCode" type="text" placeholder="Enter ZIP Code" class="form-control input-md" required="">
-                          </div>
-                        </div>
-                        <div class="collapse" id="zipExample">
-                          <div class="well">
-                            Input the zip code for your business.
-                          </div>
-                        </div>
+                                {{ad}}
+                                <br/>
 
-                        <!-- Text input-->
-                        <div class="form-group">
-                          <label class="col-md-4 control-label" for="zipRadius" data-toggle="collapse" data-target="#radiusExample" aria-expanded="false" aria-controls="collapseExample">Campaign Radius (?):</label>
-                          <div class="col-md-5">
-                          <input id="zipRadius" name="zipRadius" type="text" placeholder="Enter Radius" class="form-control input-md" required="">
-                          </div>
+                            {% endfor %}
+                            </div>
                         </div>
-                        <div class="collapse" id="radiusExample">
-                          <div class="well">
-                            Input the distance (in miles) from your business that you're able to service customers.
-                          </div>
-                        </div>
+                    <div class="row">
 
-                        <!--&lt;!&ndash; Textarea &ndash;&gt;-->
-                        <!--<div class="form-group">-->
-                          <!--<label class="col-md-4 control-label" for="locations" data-toggle="collapse" data-target="#locationExample" aria-expanded="false" aria-controls="collapseExample">Locations (?):</label>-->
-                          <!--<div class="col-md-4">-->
-                            <!--<textarea style="width:270px;" class="form-control" id="locations" name="locations"></textarea>-->
-                          <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="collapse" id="locationExample">-->
-                          <!--<div class="well">-->
-                            <!--Input the cities, states, or zip codes you wish to target.-->
-                          <!--</div>-->
-                        <!--</div>-->
-
-                        <!-- Textarea -->
-                        <div class="form-group">
-                          <label class="col-md-4 control-label" for="keywords" data-toggle="collapse" data-target="#keywordExample" aria-expanded="false" aria-controls="collapseExample">Keywords (?):</label>
-                          <div class="col-md-4">
-                            <textarea class="form-control" id="keywords" name="keywords"></textarea>
-                          </div>
-                        </div>
-                        <div class="collapse" id="keywordExample">
-                          <div class="well">
-                            Input the search terms you'd like to show advertisements for.
-                          </div>
-                        </div>
-
-                        <!-- Text input-->
-                        <div class="form-group">
-                          <label class="col-md-4 control-label" for="maxCPC" data-toggle="collapse" data-target="#cpcExample" aria-expanded="false" aria-controls="collapseExample">Max CPC (?):</label>
-                          <div class="col-md-5">
-                          <input id="maxCPC" name="maxCPC" type="text" placeholder="Enter maximum bid" class="form-control input-md" required="">
-                          </div>
-                        </div>
-                        <div class="collapse" id="cpcExample">
-                          <div class="well">
-                            Input the maximum amount (USD) you're willing to pay for a click to your website.
-                          </div>
-                        </div>
-
-                        <!-- Text input-->
-                        <div class="form-group">
-                          <label class="col-md-4 control-label" for="headline" data-toggle="collapse" data-target="#adHeadlineExample" aria-expanded="false" aria-controls="collapseExample">Ad Headline (?):</label>
-                          <div class="col-md-6">
-                          <input id="headline" name="headline" type="text" placeholder="Best Sample Maid Company" class="form-control input-md" required="">
-                          <!--<span class="help-block">Enter ad headline</span>-->
-                          </div>
-                        </div>
-                        <div class="collapse" id="adHeadlineExample">
-                          <div class="well">
-                            Input the headline for the ad you'd like to show users when they see your ads.
-                          </div>
-                        </div>
-
-                        <!-- Text input-->
-                        <div class="form-group">
-                          <label class="col-md-4 control-label" for="descLineOne" data-toggle="collapse" data-target="#descLineOneExample" aria-expanded="false" aria-controls="collapseExample">Description Line One (?):</label>
-                          <div class="col-md-6">
-                          <input id="descLineOne" name="descLineOne" type="text" placeholder="Need Fast and Affordable Service?" class="form-control input-md" required="">
-                          <!--<span class="help-block">Enter first description line</span>-->
-                          </div>
-                        </div>
-                        <div class="collapse" id="descLineOneExample">
-                          <div class="well">
-                            Input the first description line you'd like to show users when they see your ads.
-                          </div>
-                        </div>
-
-                        <!-- Text input-->
-                        <div class="form-group">
-                          <label class="col-md-4 control-label" for="descLineTwo" data-toggle="collapse" data-target="#descLineTwoExample" aria-expanded="false" aria-controls="collapseExample">Description Line Two (?):</label>
-                          <div class="col-md-6">
-                          <input id="descLineTwo" name="descLineTwo" type="text" placeholder="9,748 houses cleaned. Call Now!" class="form-control input-md" required="">
-                          <!--<span class="help-block">Enter second description line</span>-->
-                          </div>
-                        </div>
-                        <div class="collapse" id="descLineTwoExample">
-                          <div class="well">
-                            Input the second description line you'd like to show users when they see your ads.
-                          </div>
-                        </div>
-
-                        <!-- Text input-->
-                        <div class="form-group">
-                          <label class="col-md-4 control-label" for="displayUrl" data-toggle="collapse" data-target="#displayExample" aria-expanded="false" aria-controls="collapseExample">Display URL (?):</label>
-                          <div class="col-md-6">
-                          <input id="displayUrl" name="displayUrl" type="text" placeholder="SampleMaidCompany.com/Deals" class="form-control input-md" required="">
-                          <!--<span class="help-block">Enter display URL</span>-->
-                          </div>
-                        </div>
-                        <div class="collapse" id="displayExample">
-                          <div class="well">
-                            Input the URL you'd like to show users when they see your ads.
-                          </div>
-                        </div>
-
-                        <!-- Text input-->
-                        <div class="form-group">
-                          <label class="col-md-4 control-label" for="destUrl" data-toggle="collapse" data-target="#destExample" aria-expanded="false" aria-controls="collapseExample">Destination URL (?):</label>
-                          <div class="col-md-6">
-                          <input id="destUrl" name="destUrl" type="text" placeholder="https://www.SampleMaidCompany.com" class="form-control input-md" required="">
-                          <!--<span class="help-block">Enter destination URL</span>-->
-                          </div>
-                        </div>
-                        <div class="collapse" id="destExample">
-                          <div class="well">
-                            Input the destination you'd like to take users to when they click your ads.
-                          </div>
-                        </div>
-
-                        <!-- Button -->
-                        <div class="form-group">
-                          <label class="col-md-4 control-label" for="generateCampaign"></label>
-                          <div class="col-md-4">
-                            <button id="generateCampaign" name="generateCampaign" class="btn btn-success">Generate Campaign</button>
-                          </div>
-                        </div>
-
-                        </fieldset>
-                        </form>
                     </div>
+                </div>
 
-				</div>
-			</div>
+            </div>
+
+        </div>
 
     </section>
     <footer>
@@ -346,7 +250,7 @@ var ajaxurl = 'http://www.launch27.com/wp-admin/admin-ajax.php';
 <li id="menu-item-1452" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1452"><a href="http://www.launch27.com/faq/">Faq</a></li>
 <li id="menu-item-1453" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1453"><a href="http://www.launch27.com/design-store-bak-feb-2015/">Designs</a></li>
 </ul>						</nav>
-					</div>					
+					</div>
 				</div>
 				<div class="stay_connected_area">
 					<div class="social_icons fl_right">
@@ -359,16 +263,16 @@ var ajaxurl = 'http://www.launch27.com/wp-admin/admin-ajax.php';
 					<div class="newsletter">
 						<div class="widget_wysija_cont shortcode_wysija"><div id="msg-form-wysija-shortcode554a564fd05e2-1" class="wysija-msg ajax"></div><form id="form-wysija-shortcode554a564fd05e2-1" method="post" action="#wysija" class="widget_wysija shortcode_wysija">
 <p class="wysija-paragraph">
-    
-    
+
+
     	<input type="text" name="wysija[user][email]" class="wysija-input validate[required,custom[email]]" title="email" placeholder="email" value="" />
-    
-    
-    
+
+
+
     <span class="abs-req">
         <input type="text" name="wysija[user][abs][email]" class="wysija-input validated[abs][email]" value="" />
     </span>
-    
+
 </p>
 <input class="wysija-submit wysija-submit-field" type="submit" value="SIGN UP" />
 
@@ -377,9 +281,9 @@ var ajaxurl = 'http://www.launch27.com/wp-admin/admin-ajax.php';
     <input type="hidden" name="controller" value="subscribers" />
     <input type="hidden" value="1" name="wysija-page" />
 
-    
+
         <input type="hidden" name="wysija[user_list][list_ids]" value="1" />
-    
+
  </form></div>					</div>
 					<div class="contact_details">
 						<div class="contact_item">
@@ -390,7 +294,7 @@ var ajaxurl = 'http://www.launch27.com/wp-admin/admin-ajax.php';
 						</div>
 					</div>
 				</div>
-			</div>	
+			</div>
 		</div>
 		<div class="copyright_area">
 				<div class="container">
@@ -404,7 +308,7 @@ var ajaxurl = 'http://www.launch27.com/wp-admin/admin-ajax.php';
 					<div class="copyright_text resp_copy" style="display:none;">
 						<h6>Copyright 2014 All Rights Reserved. Copyright Launch27.</h6>
 					</div>
-					
+
 				</div>
 		</div>
 		<div id="sidr">
@@ -413,14 +317,8 @@ var ajaxurl = 'http://www.launch27.com/wp-admin/admin-ajax.php';
 <li id="menu-item-1227" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1227"><a href="#">Design Store</a></li>
 <li id="menu-item-1228" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1228"><a href="#">Features Stories</a></li>
 <li id="menu-item-1229" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1229"><a href="#">Help</a></li>
-</ul>		</div>		
+</ul>		</div>
 	</footer>
-
-<script type="text/javascript">
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
-                            </script>
 	<script type="text/javascript">
 setTimeout(function(){var a=document.createElement("script");
 var b=document.getElementsByTagName('script')[0];
