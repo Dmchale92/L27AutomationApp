@@ -133,75 +133,11 @@ var ajaxurl = 'http://www.launch27.com/wp-admin/admin-ajax.php';
                             {{campaignSettings}}
                             </div>
                         </div>
-
-                        <div class="col-md-6">
-                            <h4 data-toggle="collapse" data-target="#locationExample" aria-expanded="false" aria-controls="collapseExample">
-                                Location Output (?):
-                            </h4>
-                            <div class="collapse" id="locationExample">
-                                <div class="well">
-                                    Upload this second.
-                                    These are your location settings in the format: Campaign Name / Location / Type
-                                    Copy these settings into the Add Multiple Locations section of the Adwords Editor under Targeting
-                                </div>
-                            </div>
-                            <div id="locationtextarea" contenteditable style="height:300px; overflow:scroll; text-align:left;">
-                            {% for location in locationSettings %}
-                                {{location}}
-                                <br/>
-                            {% endfor %}
-                            </div>
-                        </div>
-                    </div>
-                        <div class="col-md-6">
-                            <h4 data-toggle="collapse" data-target="#keywordExample" aria-expanded="false" aria-controls="collapseExample">
-                                Keywords Output (?):
-                            </h4>
-                            <div class="collapse" id="keywordExample">
-                                <div class="well">
-                                    Upload this third.
-                                    These are your keyword settings in the format: Campaign Name / Ad Group / Keyword / Max CPC / Match Type
-                                    Copy these settings into the Add Multiple Keywords section of the Adwords Editor
-                                </div>
-                            </div>
-                            <div id="keytextarea" contenteditable style="height:300px; overflow:scroll; text-align:left;">
-                            {% for keyword in keywordList %}
-                                {{keyword}}
-                                <br/>
-                            {% endfor %}
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <h4 data-toggle="collapse" data-target="#adExample" aria-expanded="false" aria-controls="collapseExample">
-                                Ads Output (?):
-                            </h4>
-                            <div class="collapse" id="adExample">
-                                <div class="well">
-                                    Upload this last.
-                                    These are your advertisements in the format: Campaign Name / Ad Group / Headline / Description Line One / Description Line Two / Display Url / Destination Url
-                                    Copy these settings into the Add Multiple Ads section of the Adwords Editor
-                                </div>
-                            </div>
-                            <div id="textarea" contenteditable style="height:300px; overflow:scroll; text-align:left;">
-
-
-                            {% for ad in adList %}
-
-                                {{ad}}
-                                <br/>
-
-                            {% endfor %}
-                            </div>
-                        </div>
                     <div class="row">
-
                     </div>
                 </div>
-
             </div>
-
         </div>
-
     </section>
     <footer>
 		<div class="footer">

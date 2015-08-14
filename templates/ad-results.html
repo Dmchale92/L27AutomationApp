@@ -118,59 +118,7 @@ var ajaxurl = 'http://www.launch27.com/wp-admin/admin-ajax.php';
 			<div class="box_content centered_content">
 				<div class="content_container">
                     <div class="row">
-                        <div class="col-md-6">
-                            <h4 data-toggle="collapse" data-target="#campaignExample" aria-expanded="false" aria-controls="collapseExample">
-                                Campaign Output (?):
-                            </h4>
-                            <div class="collapse" id="campaignExample">
-                                <div class="well">
-                                    Upload this first.
-                                    These are your campaign settings in the format: Campaign Name / Status / Daily Budget / Networks
-                                    Copy these settings into the Add Multiple Campaigns section of the Adwords Editor
-                                </div>
-                            </div>
-                            <div id="campaigntextarea" contenteditable style="height:300px; overflow:scroll; text-align:left;">
-                            {{campaignSettings}}
-                            </div>
-                        </div>
 
-                        <div class="col-md-6">
-                            <h4 data-toggle="collapse" data-target="#locationExample" aria-expanded="false" aria-controls="collapseExample">
-                                Location Output (?):
-                            </h4>
-                            <div class="collapse" id="locationExample">
-                                <div class="well">
-                                    Upload this second.
-                                    These are your location settings in the format: Campaign Name / Location / Type
-                                    Copy these settings into the Add Multiple Locations section of the Adwords Editor under Targeting
-                                </div>
-                            </div>
-                            <div id="locationtextarea" contenteditable style="height:300px; overflow:scroll; text-align:left;">
-                            {% for location in locationSettings %}
-                                {{location}}
-                                <br/>
-                            {% endfor %}
-                            </div>
-                        </div>
-                    </div>
-                        <div class="col-md-6">
-                            <h4 data-toggle="collapse" data-target="#keywordExample" aria-expanded="false" aria-controls="collapseExample">
-                                Keywords Output (?):
-                            </h4>
-                            <div class="collapse" id="keywordExample">
-                                <div class="well">
-                                    Upload this third.
-                                    These are your keyword settings in the format: Campaign Name / Ad Group / Keyword / Max CPC / Match Type
-                                    Copy these settings into the Add Multiple Keywords section of the Adwords Editor
-                                </div>
-                            </div>
-                            <div id="keytextarea" contenteditable style="height:300px; overflow:scroll; text-align:left;">
-                            {% for keyword in keywordList %}
-                                {{keyword}}
-                                <br/>
-                            {% endfor %}
-                            </div>
-                        </div>
                         <div class="col-md-6">
                             <h4 data-toggle="collapse" data-target="#adExample" aria-expanded="false" aria-controls="collapseExample">
                                 Ads Output (?):
@@ -183,72 +131,67 @@ var ajaxurl = 'http://www.launch27.com/wp-admin/admin-ajax.php';
                                 </div>
                             </div>
                             <div id="textarea" contenteditable style="height:300px; overflow:scroll; text-align:left;">
-
-
                             {% for ad in adList %}
-
                                 {{ad}}
                                 <br/>
-
                             {% endfor %}
                             </div>
                         </div>
                     <div class="row">
-
                     </div>
                 </div>
-
             </div>
-
         </div>
-
+	</div>
     </section>
     <footer>
 		<div class="footer">
 			<div class="container">
 				<div class="footer_menus">
 					<div class="top_footer_area">
-						<a href="http://www.launch27.com"><img src="http://www.launch27.com/wp-content/themes/verycreative/images/logo_footer.png" alt="" class="fl_left"></a>
+						<a href="http://www.launch27.com">
+							<img src="http://www.launch27.com/wp-content/themes/verycreative/images/logo_footer.png" alt="" class="fl_left">
+						</a>
 					</div>
 					<div class="footer_menu">
 						<span class="menu_title">LAUNCH27</span>
 						<nav>
 							<ul id="menu-footer-col-1" class="menu"><li id="menu-item-1438" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1438"><a href="http://www.launch27.com/">Home</a></li>
-<li id="menu-item-1434" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1434"><a href="http://www.launch27.com/contact/">Contact</a></li>
-<li id="menu-item-1436" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1436"><a href="http://www.launch27.com/faq/">Faq</a></li>
-<li id="menu-item-1435" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-1133 current_page_item menu-item-1435"><a href="http://www.launch27.com/features/">Features</a></li>
-<li id="menu-item-1437" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1437"><a href="http://www.launch27.com/design-store-bak-feb-2015/">Designs</a></li>
-<li id="menu-item-1509" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1509"><a href="http://login.launch27.com">Login</a></li>
+								<li id="menu-item-1434" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1434"><a href="http://www.launch27.com/contact/">Contact</a></li>
+								<li id="menu-item-1436" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1436"><a href="http://www.launch27.com/faq/">Faq</a></li>
+								<li id="menu-item-1435" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-1133 current_page_item menu-item-1435"><a href="http://www.launch27.com/features/">Features</a></li>
+								<li id="menu-item-1437" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1437"><a href="http://www.launch27.com/design-store-bak-feb-2015/">Designs</a></li>
+								<li id="menu-item-1509" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1509"><a href="http://login.launch27.com">Login</a></li>
 </ul>						</nav>
 					</div>
 					<div class="footer_menu">
 						<span class="menu_title">LAUNCH27</span>
 						<nav>
 							<ul id="menu-footer-col-2" class="menu"><li id="menu-item-1439" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1439"><a href="http://www.launch27.com/contact/">Contact</a></li>
-<li id="menu-item-1442" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1442"><a href="http://www.launch27.com/design-store-bak-feb-2015/">Designs</a></li>
-<li id="menu-item-1440" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-1133 current_page_item menu-item-1440"><a href="http://www.launch27.com/features/">Features</a></li>
-<li id="menu-item-1443" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1443"><a href="http://www.launch27.com/">Home</a></li>
-<li id="menu-item-1441" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1441"><a href="http://www.launch27.com/faq/">Faq</a></li>
+								<li id="menu-item-1442" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1442"><a href="http://www.launch27.com/design-store-bak-feb-2015/">Designs</a></li>
+								<li id="menu-item-1440" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-1133 current_page_item menu-item-1440"><a href="http://www.launch27.com/features/">Features</a></li>
+								<li id="menu-item-1443" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1443"><a href="http://www.launch27.com/">Home</a></li>
+								<li id="menu-item-1441" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1441"><a href="http://www.launch27.com/faq/">Faq</a></li>
 </ul>						</nav>
 					</div>
 					<div class="footer_menu">
 						<span class="menu_title">LAUNCH27</span>
 						<nav>
 							<ul id="menu-footer-col-3" class="menu"><li id="menu-item-1446" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1446"><a href="http://www.launch27.com/faq/">Faq</a></li>
-<li id="menu-item-1444" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1444"><a href="http://www.launch27.com/contact/">Contact</a></li>
-<li id="menu-item-1447" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1447"><a href="http://www.launch27.com/design-store-bak-feb-2015/">Designs</a></li>
-<li id="menu-item-1445" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-1133 current_page_item menu-item-1445"><a href="http://www.launch27.com/features/">Features</a></li>
-<li id="menu-item-1448" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1448"><a href="http://www.launch27.com/">Home</a></li>
+								<li id="menu-item-1444" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1444"><a href="http://www.launch27.com/contact/">Contact</a></li>
+								<li id="menu-item-1447" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1447"><a href="http://www.launch27.com/design-store-bak-feb-2015/">Designs</a></li>
+								<li id="menu-item-1445" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-1133 current_page_item menu-item-1445"><a href="http://www.launch27.com/features/">Features</a></li>
+								<li id="menu-item-1448" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1448"><a href="http://www.launch27.com/">Home</a></li>
 </ul>						</nav>
 					</div>
 					<div class="footer_menu">
 						<span class="menu_title">LAUNCH27</span>
 						<nav>
 							<ul id="menu-footer-col-4" class="menu"><li id="menu-item-1449" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1449"><a href="http://www.launch27.com/pricing/">Pricing</a></li>
-<li id="menu-item-1450" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1450"><a href="http://www.launch27.com/contact/">Contact</a></li>
-<li id="menu-item-1451" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-1133 current_page_item menu-item-1451"><a href="http://www.launch27.com/features/">Features</a></li>
-<li id="menu-item-1452" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1452"><a href="http://www.launch27.com/faq/">Faq</a></li>
-<li id="menu-item-1453" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1453"><a href="http://www.launch27.com/design-store-bak-feb-2015/">Designs</a></li>
+								<li id="menu-item-1450" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1450"><a href="http://www.launch27.com/contact/">Contact</a></li>
+								<li id="menu-item-1451" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-1133 current_page_item menu-item-1451"><a href="http://www.launch27.com/features/">Features</a></li>
+								<li id="menu-item-1452" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1452"><a href="http://www.launch27.com/faq/">Faq</a></li>
+								<li id="menu-item-1453" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1453"><a href="http://www.launch27.com/design-store-bak-feb-2015/">Designs</a></li>
 </ul>						</nav>
 					</div>
 				</div>
@@ -263,28 +206,20 @@ var ajaxurl = 'http://www.launch27.com/wp-admin/admin-ajax.php';
 					<div class="newsletter">
 						<div class="widget_wysija_cont shortcode_wysija"><div id="msg-form-wysija-shortcode554a564fd05e2-1" class="wysija-msg ajax"></div><form id="form-wysija-shortcode554a564fd05e2-1" method="post" action="#wysija" class="widget_wysija shortcode_wysija">
 <p class="wysija-paragraph">
-
-
     	<input type="text" name="wysija[user][email]" class="wysija-input validate[required,custom[email]]" title="email" placeholder="email" value="" />
-
-
-
     <span class="abs-req">
         <input type="text" name="wysija[user][abs][email]" class="wysija-input validated[abs][email]" value="" />
-    </span>
-
+	</span>
 </p>
-<input class="wysija-submit wysija-submit-field" type="submit" value="SIGN UP" />
-
-    <input type="hidden" name="form_id" value="1" />
-    <input type="hidden" name="action" value="save" />
-    <input type="hidden" name="controller" value="subscribers" />
-    <input type="hidden" value="1" name="wysija-page" />
-
-
-        <input type="hidden" name="wysija[user_list][list_ids]" value="1" />
-
- </form></div>					</div>
+							<input class="wysija-submit wysija-submit-field" type="submit" value="SIGN UP" />
+							<input type="hidden" name="form_id" value="1" />
+							<input type="hidden" name="action" value="save" />
+							<input type="hidden" name="controller" value="subscribers" />
+							<input type="hidden" value="1" name="wysija-page" />
+							<input type="hidden" name="wysija[user_list][list_ids]" value="1" />
+						</form>
+						</div>
+					</div>
 					<div class="contact_details">
 						<div class="contact_item">
 							<a class="phone_icon" href="tel:13029816191">1 (888) 864-8229</a>
